@@ -2,8 +2,11 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#current-city");
+  let wind = document.querySelector("#Wind");
+
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
+  wind.innerHTML = response.data;
 }
 
 function search(event) {
@@ -37,7 +40,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   let formattedDay = days[day];
